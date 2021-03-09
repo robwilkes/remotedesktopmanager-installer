@@ -36,4 +36,5 @@ Removing temporary dir - RemoteDesktopManager.Free_2020.3.2.2_amd64
 ```
 
 <img src="demo/desktop-shortcut.png" width=1000>
+
 <img src="demo/application-launches.png" width=1000>
