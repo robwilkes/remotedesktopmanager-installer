@@ -5,9 +5,6 @@
 
 Installer for OpenSUSE.
 
-<img src="demo/desktop-shortcut.png" width=1000>
-<img src="demo/application-launches.png" width=1000>
-
 ## Installation
 
 ### Step 1: Download the repo
@@ -38,3 +35,5 @@ Creating .desktop shortcut /home/username/.local/share/applications/remotedeskto
 Removing temporary dir - RemoteDesktopManager.Free_2020.3.2.2_amd64
 ```
 
+<img src="demo/desktop-shortcut.png" width=1000>
+<img src="demo/application-launches.png" width=1000>
