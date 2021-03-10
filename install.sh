@@ -14,7 +14,17 @@ fi
 
 TMP_DIR="${1/.deb/}"
 
-INSTALL_DIR="$HOME/.local/bin/RemoteDesktopManager.Free"
+INSTALL_DIR="$HOME/.local/opt/RemoteDesktopManager.Free"
+
+if [ ! -d "$HOME/.local" ]; then
+	echo "Creating $HOME/.local"
+	mkdir $HOME/.local
+fi
+
+if [ ! -d "$HOME/.local/opt" ]; then
+	echo "Creating $HOME/.local/opt"
+	mkdir $HOME/.local/opt
+fi
 
 if [ -d "$INSTALL_DIR" ]; then
 	echo "Removing previous installation dir - $INSTALL_DIR"
@@ -34,8 +44,8 @@ fi
 echo "Extracting .deb archive to $TMP_DIR"
 dpkg-deb -X $1 $TMP_DIR >/dev/null
 
-echo "Moving installation dir to $HOME/.local/bin/"
-mv ./$TMP_DIR/usr/lib/devolutions/RemoteDesktopManager.Free $HOME/.local/bin/
+echo "Moving installation dir to $HOME/.local/opt/"
+mv ./$TMP_DIR/usr/lib/devolutions/RemoteDesktopManager.Free $HOME/.local/opt/
 
 echo "Moving application icon to $HOME/.local/share/icons/"
 mv ./$TMP_DIR/usr/share/icons/remotedesktopmanager.free.png $HOME/.local/share/icons/
@@ -53,8 +63,8 @@ cat << EOF > $HOME/.local/share/applications/remotedesktopmanager.free.desktop
 Version=1.1
 Type=Application
 Name=Remote Desktop Manager Free
-Exec=$HOME/.local/bin/RemoteDesktopManager.Free/RemoteDesktopManager.Free
-Path=$HOME/.local/bin/RemoteDesktopManager.Free
+Exec=$HOME/.local/opt/RemoteDesktopManager.Free/RemoteDesktopManager.Free
+Path=$HOME/.local/opt/RemoteDesktopManager.Free
 Icon=$HOME/.local/share/icons/remotedesktopmanager.free.png
 Terminal=false
 EOF
